@@ -1,18 +1,19 @@
 // import React from 'react'
 import {logo} from "../assets";
-
+import Socials from './Socials';
 const Hero = () => {
   return (
     <header className="w-full flex justify-center items-center flex-col">
         <nav className="flex justify-between items-center w-full mb-10 pt-3">
             <img src={logo} alt="Logo" className="w-28 object-contain" />
-            <button type="button" 
+            <Socials/>
+            {/* <button type="button" 
             onClick={()=>{
-                window.open('https://github.com/ayush865',"_blank")
+                window.open('https://github.com/Ayush865/WebScan',"_blank")
             }}
              className="black_btn">
                 Github
-            </button>
+            </button> */}
         </nav>
         <h1 className="head_text">
             Summarize Articles with <br className="max-md:hidden"/>
