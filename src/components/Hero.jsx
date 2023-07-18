@@ -20,7 +20,8 @@ const Hero = () => {
             <span className="blue_gradient ">Artifical Intelligence</span>
         </h1>
         <h2 className="desc">
-            Simplify your reading with WebScan, an open-source article summarizer that transforms lengthy articles into clear and concise summaries
+            {/* Simplify your reading with WebScan, an open-source article summarizer that transforms lengthy articles into clear and concise summaries */}
+            Illuminating Brilliance, Transcending Complexity - Transforms Lengthy Articles into Crystal-Clear Conciseness!
         </h2>
     </header>
   )

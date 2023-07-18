@@ -1,6 +1,7 @@
 // import React from 'react'
 import Demo from './components/Demo';
 import Hero from './components/Hero';
+// import Footer from './components/Footer'
 import './App.css';
 
 const App=()=>{
@@ -12,6 +13,7 @@ const App=()=>{
             <div className="app">
                 <Hero/>
                 <Demo />
+                {/* <Footer/> */}
             </div>
         </main>
     )
