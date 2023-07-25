@@ -72,7 +72,6 @@ const Demo = () => {
             alt='link-icon'
             className='absolute left-0 my-2 ml-3 w-5'
           />
-
           <input
             type='url'
             placeholder='Paste the article link'
