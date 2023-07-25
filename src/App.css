@@ -61,15 +61,21 @@
   filter: blur(100px) saturate(190%);
   top: 80px;
   opacity: 0.2;
-  animation: color 5s ease-in-out infinite;
+  animation: color 8s ease-in-out infinite;
 }
 
 @keyframes color{
   0%{
     background-color: red;
   }
+  25%{
+    background-color:yellow;
+  }
   50%{
     background-color: blue;
+  }
+  75%{
+    background-color:pink;
   }
   100%{
     background-color: green;
