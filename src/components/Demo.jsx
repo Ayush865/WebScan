@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 
 import { copy, linkIcon, loader, tick } from "../assets";
 import { useLazyGetSummaryQuery } from "../services/article";
+import LanguageDropdown from './LanguageDropdown';
 
-const Demo = () => {
+const Demo = ({selectedLanguageCode}) => {
   const [article, setArticle] = useState({
     url: "",
     summary: "",
   });
+  // console.log(selectedLanguageCode)
   const [allArticles, setAllArticles] = useState([]);
   const [copied, setCopied] = useState("");
-
+  // const [articleLang,setarticleLang]=useState("en");
   // RTK lazy query
   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
 
@@ -33,12 +35,12 @@ const Demo = () => {
     );
 
     if (existingArticle) return setArticle(existingArticle);
-
-    const { data } = await getSummary({ articleUrl: article.url });
+    const { data } = await getSummary({ articleUrl: article.url 
+      ,articleLang:selectedLanguageCode
+    });
     if (data?.summary) {
       const newArticle = { ...article, summary: data.summary };
       const updatedAllArticles = [newArticle, ...allArticles];
-
       // update state and local storage
       setArticle(newArticle);
       setAllArticles(updatedAllArticles);
@@ -58,9 +60,15 @@ const Demo = () => {
       handleSubmit(e);
     }
   };
+  // const [selectedLanguageCode, setSelectedLanguageCode] = useState('en');
 
+  // const handleSelectLanguage = (language) => {
+  //   setSelectedLanguageCode(language);
+  // };
   return (
-    <section className='mt-16 w-full max-w-xl'>
+    <section className='mt-5 w-full max-w-xl'>
+      
+      {/* <p>Selected language code in parent: {selectedLanguageCode}</p> */}
       {/* Search */}
       <div className='flex flex-col w-full gap-2'>
         <form
@@ -72,6 +80,7 @@ const Demo = () => {
             alt='link-icon'
             className='absolute left-0 my-2 ml-3 w-5'
           />
+          
           <input
             type='url'
             placeholder='Paste the article link'
@@ -95,6 +104,7 @@ const Demo = () => {
             </div>
             <span>Send</span>
           </button>
+          
           {/* <button
             type='submit'
             className='submit_btn peer-focus:border-gray-700 peer-focus:text-gray-700 '

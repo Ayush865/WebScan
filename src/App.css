@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;500&family=Montserrat:wght@100;400;500&family=Oswald:wght@300&family=Piazzolla:wght@200;400;900&family=Poppins:ital,wght@0,300;1,100;1,200;1,400;1,900&family=Roboto+Condensed:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +7,12 @@
 /* 
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) â€“ all credits go to them! 
 */
+/* font-family: 'Inter', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Piazzolla', serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto Condensed', sans-serif; */
 
 .main {
   width: 100vw;
@@ -472,3 +480,47 @@
   }
 }
 
+/* Styles for the dropdown container */
+.dropdown-container {
+  margin: 15px;
+  padding: 5px;
+  display: flex;
+  /* flex-direction: column; */
+  /* margin-bottom: 20px;  */
+  /* justify-content: center; */
+  align-items: center;
+}
+
+/* Styles for the dropdown label */
+.dropdown-label {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  padding: 5px;
+}
+
+/* Styles for the dropdown select */
+.dropdown-select {
+  padding: 8px ; 
+  border: 1px solid #2c5494;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  width: 130px; /* Adjust as needed */
+  cursor: pointer;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Optional styles for dropdown options */
+.dropdown-select option {
+  padding: 8px 12px; /* Adjust as needed */
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Style for selected option */
+.dropdown-select option:checked {
+  background-color: #007bff; /* Change the color to your desired selection background */
+  color: #fff; /* Change the color to your desired selection text color */
+}
